@@ -10,6 +10,7 @@ gem 'dotenv'
 gem 'pg'
 
 gem 'haml-rails', '~> 0.9'
+gem 'foundation-rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

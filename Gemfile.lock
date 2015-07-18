@@ -63,6 +63,9 @@ GEM
     dotenv (2.0.1)
     erubis (2.7.0)
     execjs (2.5.2)
+    foundation-rails (5.5.2.1)
+      railties (>= 3.1.0)
+      sass (>= 3.3.0, < 3.5)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     haml (4.0.6)
@@ -184,6 +187,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   dotenv
+  foundation-rails
   haml-rails (~> 0.9)
   jbuilder (~> 2.0)
   jquery-rails
