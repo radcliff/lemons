@@ -1,0 +1,37 @@
+.row
+  .small-12.medium-8.medium-centered.columns
+    %h1 Create new listing
+
+  %form
+    .row
+      .small-12.medium-8.medium-centered.columns
+        %fieldset.row
+          %legend What do you have?
+          .small-4.columns
+            %label
+              Type
+              %select
+                %option{ value: "carrot" } Carrots
+                %option{ value: "lemons", selected: '' } Lemons
+          .small-8.medium-6.columns.end
+            %label
+              Varietal
+              %input{ type: "text", placeholder: "\"Nelson\", \"Tango\", or \"General Lee\"" }
+        %fieldset.row
+          %legend Describe your produce
+          .small-12.medium-8.columns
+            %label Description
+            %textarea#description{ placeholder: "", style: "resize:none;", rows: "5" }
+        %fieldset.row
+          %legend How many do you have?
+          .small-4.columns
+            %label
+              Count
+              %input{ type: "number", min:"1", inputmode: "numeric", pattern: "[0-9]*", value: "1" }
+          .small-8.medium-6.columns.end
+            %label
+              Unit
+              %input{ type: "text", placeholder: "\"bunches\", \"pounds\", etc." }
+        .row
+          .small-10.medium-8.small-centered.columns
+            %a.button.expand.success{ href: "#" } List my food
