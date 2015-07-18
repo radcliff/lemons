@@ -8,6 +8,9 @@ gem 'dotenv'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
+
+gem 'haml-rails', '~> 0.9'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
