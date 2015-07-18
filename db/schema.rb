@@ -22,10 +22,12 @@ ActiveRecord::Schema.define(version: 20150716071921) do
     t.string   "encrypted_password", default: "", null: false
     t.string   "name",                            null: false
     t.string   "zipcode",                         null: false
+    t.string   "location"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "growers", ["email"], name: "index_growers_on_email", unique: true, using: :btree
+  add_index "growers", ["zipcode"], name: "index_growers_on_zipcode", using: :btree
 
 end
