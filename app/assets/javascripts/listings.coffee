@@ -9,7 +9,6 @@ $(document).ready () ->
 
   $submit = $('#submit')
   $submit.click ->  # submit item form by clicking button
-    $(this).removeClass('success').addClass('secondary') # make button look disabled
 
     session = Cookies.get('_lolsesh')
 
@@ -19,6 +18,7 @@ $(document).ready () ->
       $('#authModal').foundation('reveal', 'open')
 
   submitItem = (userId) ->
+    $(this).removeClass('success').addClass('secondary') # make button look disabled
     # $submit.off('click')  # remove handler from submit button
 
     item = {}  # create an empty item object
