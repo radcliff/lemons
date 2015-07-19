@@ -2,7 +2,7 @@
   .small-12.medium-8.medium-centered.columns
     %h1 Create new listing
 
-  %form
+  %form#item
     .row
       .small-12.medium-8.medium-centered.columns
         %fieldset.row
@@ -34,7 +34,6 @@
               %input{ type: "text", name: "unit", placeholder: "\"bunches\", \"lbs\", etc." }
         .row
           .small-10.medium-8.small-centered.columns
-            %a.button.radius.expand.success List my food
+            %a.button.radius.expand.success#submit List my food
 
 = render partial: 'auth_modal'
-%a{ href: "#", 'data-reveal-id': "authModal" } MODAL
