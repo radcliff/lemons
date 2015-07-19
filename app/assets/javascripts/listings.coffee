@@ -41,3 +41,36 @@ $(document).ready () ->
       .fail (error) ->
         console.log error.statusText
 
+
+  $('#logIn').click () ->  # submit auth form by clicking button
+    $('form.login').submit()
+
+  $('form.login').submit (event) ->  # whenever the form is submitted
+    event.preventDefault()
+    logIn()
+
+  logIn = () ->  # make ajax call for login
+    $emailField = $('.login input[type=email]')
+    $passwordField = $('.login input[type=password]')
+
+    session =
+      session:
+        email: $emailField.val()
+        password: $passwordField.val()
+
+    $.post('api/sessions', session)  # login !
+      .done (data) ->
+        userId = createSession(data)  # store session cookie
+
+        $emailField.val('')
+        $passwordField.val('')
+
+        $('#authModal').foundation('reveal', 'close')
+        submitItem(userId)
+
+      .fail (error) ->
+        console.log error.statusText
+
+  createSession = (session) ->  # create session cookie
+    Cookies.set('_lolsesh', session.session.id, { expires: 7 })
+    Cookies.get('_lolsesh')
