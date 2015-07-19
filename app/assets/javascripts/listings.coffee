@@ -55,6 +55,39 @@ $(document).ready () ->
       .delay(10000).fadeOut(500)
 
 
+  $signUpForm = $('form.signup')
+  $('#signUp').click () ->  # submit signup form by clicking button
+    $signUpForm.submit()
+
+  $signUpForm.submit (event) ->  # whenever the form is submitted
+    event.preventDefault()
+    signUp()
+
+  signUp = () ->
+    itemAttributes = $signUpForm.serializeArray()
+    grower = {}
+
+    $.each itemAttributes, (index, element) ->
+      grower[element.name] = element.value
+
+    $.ajax(
+      url: 'api/growers'
+      type: 'POST'
+      dataType: 'json'
+      data:
+        grower: grower
+    )
+      .done (data) ->
+        userId = createSession(data.grower.id)  # store session cookie
+
+        $signUpForm[0].reset()  # clear signup form
+
+        $('#authModal').foundation('reveal', 'close')
+        submitItem(userId)
+
+      .fail (error) ->
+        console.log error.statusText
+
   $('#logIn').click () ->  # submit auth form by clicking button
     $('form.login').submit()
 
