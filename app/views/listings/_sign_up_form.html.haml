@@ -1,0 +1,18 @@
+.row
+  .small-12.columns
+    .row
+      .small-12.columns
+        %input{ type: "text", placeholder: "Name" }
+      .small-12.columns
+        %input{ type: "email", placeholder: "Email" }
+      .small-12.columns
+        %input{ type: "password", placeholder: "Password" }
+      .small-6.medium-6.columns.end
+        %input{ type: "text", inputmode: "numeric", pattern: "[0-9]*", maxlength: "5", placeholder: "Zipcode" }
+    .row
+      .small-10.medium-6.small-centered.columns
+        %a.button.radius.small.expand.success Sign up
+      / .small-12.medium-10.small-centered.columns
+      /   %p.text-center
+      /     Already have an account? 
+      /     %a Log in.
