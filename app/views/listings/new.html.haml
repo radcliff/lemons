@@ -1,6 +1,6 @@
 .row
   .small-12.medium-8.medium-centered.columns
-    %h1 Create new listing
+    %h1.title Create new listing
 
   %form#item
     .row
@@ -37,3 +37,11 @@
             %a.button.radius.expand.success#submit List my food
 
 = render partial: 'auth_modal'
+
+:plain
+  <script id="success-alert-template" type="text/x-handlebars-template">
+    <div data-alert class="alert-box success radius">
+      Thanks, <strong>{{type}}</strong> ({{quantity}} {{unit}}) were added to your list.
+      <a href="#" class="close">&times;</a>
+    </div>
+  </script>

@@ -5,6 +5,8 @@
 $(document).ready () ->
 
 
+  # $('form#item > *').click(function(event){alert("form clicked!")});
+
   $submit = $('#submit')
   $submit.click ->  # submit item form by clicking button
     $(this).removeClass('success').addClass('secondary') # make button look disabled
@@ -17,14 +19,15 @@ $(document).ready () ->
       $('#authModal').foundation('reveal', 'open')
 
   submitItem = (userId) ->
+    # $submit.off('click')  # remove handler from submit button
+
     item = {}  # create an empty item object
     item['user_id'] = userId
 
     itemAttributes = $('form#item').serializeArray()  # pull all the attributes from form
 
     $.each itemAttributes, (index, element) ->
-      if element.name == 'quantity'
-        element.value = parseInt(element.value)
+      element.value = parseInt(element.value) if element.name == 'quantity'  # quantity is an integer
 
       item[element.name] = element.value  # set attributes on item
 
@@ -35,11 +38,21 @@ $(document).ready () ->
       data: item
     )
       .done (data) ->
+        $('form#item')[0].reset()  # clear item form
         $submit.removeClass('secondary').addClass('success') # make button look enabled
+        showSuccessAlert(data)
 
-        console.log data
       .fail (error) ->
         console.log error.statusText
+
+  showSuccessAlert = (item) ->
+    window.scrollTo(0, 0)  # scroll to top of window
+
+    source = $("#success-alert-template").html()
+    template = Handlebars.compile(source)
+
+    $(template item.item).hide().appendTo('.title').fadeIn(500)
+      .delay(10000).fadeOut(500)
 
 
   $('#logIn').click () ->  # submit auth form by clicking button
