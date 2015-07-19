@@ -73,7 +73,7 @@ $(document).ready () ->
 
     $.post('api/sessions', session)  # login !
       .done (data) ->
-        userId = createSession(data)  # store session cookie
+        userId = createSession(data.session.id)  # store session cookie
 
         $emailField.val('')
         $passwordField.val('')
@@ -84,6 +84,6 @@ $(document).ready () ->
       .fail (error) ->
         console.log error.statusText
 
-  createSession = (session) ->  # create session cookie
-    Cookies.set('_lolsesh', session.session.id, { expires: 7 })
+  createSession = (id) ->  # create session cookie
+    Cookies.set('_lolsesh', id, { expires: 7 })
     Cookies.get('_lolsesh')

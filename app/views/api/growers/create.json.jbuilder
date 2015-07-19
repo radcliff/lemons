@@ -1,3 +1,3 @@
 json.grower do
-  json.(@grower, :name, :email, :zipcode, :location)
+  json.(@grower, :id, :name, :email, :zipcode, :location)
 end
