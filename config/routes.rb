@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   get 'offer', to: 'listings#new'
 
   # devise_for :growers
+    post 'items', to: 'items#create'
   # devise_for :chefs
 end
