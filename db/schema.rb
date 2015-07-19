@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150716071921) do
+ActiveRecord::Schema.define(version: 20150718070940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,10 +22,19 @@ ActiveRecord::Schema.define(version: 20150716071921) do
     t.string   "encrypted_password", default: "", null: false
     t.string   "name",                            null: false
     t.string   "zipcode",                         null: false
+    t.string   "location"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "growers", ["email"], name: "index_growers_on_email", unique: true, using: :btree
+  add_index "growers", ["zipcode"], name: "index_growers_on_zipcode", using: :btree
+
+  create_table "lists", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.uuid     "grower_id",               null: false
+    t.jsonb    "items",      default: []
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
 
 end

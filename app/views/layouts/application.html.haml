@@ -1,0 +1,22 @@
+!!! 5
+%html{ :lang => "en"}
+  %head
+    %meta{ :charset => "utf-8" }
+
+    %meta{ name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" }
+    = favicon_link_tag 'favicon.ico'
+
+
+    %title= content_for?(:title) ? yield(:title) : "Lots of Lemons"
+
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "vendor/modernizr"
+    = javascript_include_tag "application", 'data-turbolinks-track' => true
+    = csrf_meta_tag
+
+  %body
+
+    = yield
+
+    = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js"
+    = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.0.2/js.cookie.min.js"

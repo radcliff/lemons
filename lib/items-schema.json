@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "\/",
+  "type": "array",
+  "minItems": 1,
+  "uniqueItems": false,
+  "additionalItems": false,
+  "items": {
+    "id": "1",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "id": "id",
+        "type": "string"
+      },
+      "type": {
+        "id": "type",
+        "type": "string"
+      },
+      "varietal": {
+        "id": "varietal",
+        "type": "string"
+      },
+      "description": {
+        "id": "description",
+        "type": "string"
+      },
+      "quantity": {
+        "id": "quantity",
+        "type": "integer"
+      },
+      "unit": {
+        "id": "unit",
+        "type": "string"
+      },
+      "expiration": {
+        "id": "expiration",
+        "type": "string"
+      }
+    }
+  }
+}

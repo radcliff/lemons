@@ -1,0 +1,13 @@
+.reveal-modal.small#authModal{ 'data-reveal': '', role: "dialog" }
+  %a.close-reveal-modal &#215;
+  %ul.tabs{ 'data-tab': '' }
+    %li.tab-title.active
+      %a{ href: "#panel1" } I'm new!
+    %li.tab-title
+      %a{ href: "#panel2" } I have an account
+
+  %div.tabs-content
+    %div.content#panel1.active
+      = render partial: 'sign_up_form'
+    %div.content#panel2
+      = render partial: 'log_in_form'

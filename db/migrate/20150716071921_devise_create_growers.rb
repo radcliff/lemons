@@ -32,11 +32,13 @@ class DeviseCreateGrowers < ActiveRecord::Migration
 
       t.string :name, null: false
       t.string :zipcode, null: false
+      t.string :location
 
       t.timestamps
     end
 
     add_index :growers, :email,                unique: true
+    add_index :growers, :zipcode
     # add_index :growers, :reset_password_token, unique: true
     # add_index :growers, :confirmation_token,   unique: true
     # add_index :growers, :unlock_token,         unique: true
