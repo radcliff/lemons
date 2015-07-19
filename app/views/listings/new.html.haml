@@ -10,28 +10,28 @@
           .small-4.columns
             %label
               Type
-              %select
+              %select{ name: "type" }
                 %option{ value: "carrot" } Carrots
                 %option{ value: "lemons", selected: '' } Lemons
           .small-8.medium-6.columns.end
             %label
               Varietal
-              %input{ type: "text", placeholder: "\"Nelson\", \"Tango\", or \"General Lee\"" }
+              %input{ type: "text", name: "varietal", placeholder: "\"Nelson\", \"Tango\", or \"General Lee\"" }
         %fieldset.row
           %legend Describe your produce
           .small-12.medium-8.columns
             %label Description
-            %textarea{ placeholder: "Use this area to describe your produce in more detail.", style: "resize:none;", rows: "5" }
+            %textarea{ name: "description", placeholder: "Use this area to describe your produce in more detail.", style: "resize:none;", rows: "5" }
         %fieldset.row
           %legend How many do you have?
           .small-4.columns
             %label
               Count
-              %input{ type: "number", min:"1", inputmode: "numeric", pattern: "[0-9]*", value: "1" }
+              %input{ type: "number", name: "quantity", min:"1", inputmode: "numeric", pattern: "[0-9]*", value: "1" }
           .small-8.medium-6.columns.end
             %label
               Unit
-              %input{ type: "text", placeholder: "\"bunches\", \"lbs\", etc." }
+              %input{ type: "text", name: "unit", placeholder: "\"bunches\", \"lbs\", etc." }
         .row
           .small-10.medium-8.small-centered.columns
             %a.button.radius.expand.success List my food
