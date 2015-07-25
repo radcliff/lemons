@@ -6,12 +6,6 @@ module Api
 
       @item = Item.new(items_params)
 
-      unless list = grower.list
-        grower.create_list!(items: [@item.attributes])
-      else
-        list.items.push(@item.attributes)
-        list.save!
-      end
     end
 
   private
