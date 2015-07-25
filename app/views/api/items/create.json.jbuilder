@@ -1,1 +1,1 @@
-json.item @item.attributes
+json.item @item

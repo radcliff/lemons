@@ -8,6 +8,6 @@ class Grower < ActiveRecord::Base
   validates :email, uniqueness: true
   validates_presence_of :name, :zipcode
 
-  has_one :list
+  has_many :items
 
 end
