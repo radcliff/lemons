@@ -4,8 +4,7 @@ module Api
       grower = Grower.find(params[:user_id])
       raise ArgumentError, "User not found" if grower.nil?
 
-      @item = Item.new(items_params)
-
+      @item = grower.items.create!(items_params)
     end
 
   private
