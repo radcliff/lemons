@@ -11,8 +11,10 @@
             %label
               Produce Type
               %select{ name: "kind" }
-                %option{ value: "carrots" } Carrots
-                %option{ value: "lemons", selected: '' } Lemons
+                - @kinds.each do |kind|
+                  %option{ value: "#{kind[:value]}" }
+                    = kind[:option]
+                  / %option{ value: "lemons", selected: '' } Lemons
           .small-8.medium-6.columns.end
             %label
               Varietal
