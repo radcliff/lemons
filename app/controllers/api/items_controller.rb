@@ -9,7 +9,7 @@ module Api
 
   private
     def items_params
-      params.permit(:type, :varietal, :description, :quantity, :unit, :expiration)
+      params.permit(:kind, :varietal, :description, :quantity, :unit, :expiration)
     end
   end
 end
