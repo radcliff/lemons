@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: redirect('/offer')
 
-  get 'offer', to: 'listings#new'
+  get 'offer', to: 'listings#form'
 
   namespace :api, defaults: { format: :json } do
     devise_scope :growers do
