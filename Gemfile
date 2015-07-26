@@ -5,7 +5,7 @@ ruby '2.2.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 
-gem 'dotenv'
+gem 'dotenv-rails', :groups => [:development, :test]
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.3.1'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'faraday'
 gem 'json-schema'
 
 # Use Unicorn as the app server

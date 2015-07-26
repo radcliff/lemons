@@ -9,16 +9,14 @@
           %legend What do you have?
           .small-4.columns
             %label
-              Produce Type
+              Type
               %select{ name: "kind" }
-                - @kinds.each do |kind|
-                  %option{ value: "#{kind[:value]}" }
-                    = kind[:option]
-                  / %option{ value: "lemons", selected: '' } Lemons
+                %option{ value: "carrots" } Carrots
+                %option{ value: "lemons", selected: '' } Lemons
           .small-8.medium-6.columns.end
             %label
               Varietal
-              %input{ type: "text", name: "varietal", placeholder: "eg. Nelson, Tango, or General Lee" }
+              %input{ type: "text", name: "varietal", placeholder: "e.g. Meyer Lemons, Cherry Tomatoes, etc." }
         %fieldset.row
           %legend Describe your produce
           .small-12.medium-8.columns
@@ -33,7 +31,7 @@
           .small-8.medium-6.columns.end
             %label
               Unit
-              %input{ type: "text", name: "unit", placeholder: "bunches, lbs, etc." }
+              %input{ type: "text", name: "unit", placeholder: "e.g. bunches, lbs, etc." }
         .row
           .small-10.medium-8.small-centered.columns
             %a.button.radius.expand.success#submit List my food
